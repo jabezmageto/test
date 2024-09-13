@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+    <title>Home</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Apply black color to all h1 elements */
+        h1 {
+            color: black;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000000;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+            margin-top: 2px;
+            padding-top: 80px;
+           
+        }
+
+        .menu-icon {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 35px;
+            height: 5px;
+            background-color: black;
+            margin: 6px 0;
+        }
+
+        .idg-icon {
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            display: flex;
+            align-items: center;
+            margin-left: 100px;
+            margin-right: 100px;
+            padding-right: 150px;
+            text-decoration: none;
+        }
+        /* General styles for desktop */
+body {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Media query for screens smaller than 768px (tablets and phones) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Media query for screens smaller than 480px (mobile phones) */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+    .container {
+        padding: 5px;
+    }
+}
+/* Width based on percentage */
+.container {
+    width: 80%; /* Will take 80% of the viewport's width */
+    margin: 0 auto;
+}
+
+/* Viewport units */
+.header {
+    height: 50vh; /* 50% of the viewport height */
+}
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap onto new lines */
+}
+
+.item {
+    flex: 1 1 300px; /* Items will take at least 300px of space, then grow or shrink */
+    margin: 10px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 10px;
+}
+
+.grid-item {
+    background-color: lightgrey;
+    padding: 20px;
+}
+/* Mobile-first default styles */
+body {
+    font-size: 14px;
+}
+
+/* Adjustments for larger screens */
+@media (min-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+        p{
+            color: white;
+        }
+        .idg-icon a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        nav {
+            flex: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            margin-right: 500px;
+            margin-left: 0;
+        }
+
+        nav ul li {
+            position: relative;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+
+        /* Dropdown Menu */
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ebebeb;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 999; /* Ensure dropdown is above other content */
+            min-width: 200px; /* Set a minimum width for dropdown */
+        }
+
+        nav ul li:hover ul {
+            display: block; /* Show the dropdown on hover */
+            border-radius: 10px;
+        }
+
+        nav ul li ul li {
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        nav ul li ul li a {
+            padding: 10px 20px;
+            color: black;
+            background-color: whitesmoke;
+            border-radius: 2px;
+            transition: background-color 0.3s ease;
+            white-space: nowrap; /* Prevent text from wrapping */
+            border-top: 2px solid #485F6D;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #ddd;
+        }
+
+        /* Slideshow Styles */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 1px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 0;
+            background-color: #485F6D;
+            color: rgb(0, 0, 0);
+        }
+        .slideshow-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .slideshow-container h1{
+            padding: 50px;
+            text-align: center;
+            font-size: 35px;
+            color: rgb(4, 3, 3);
+            font-family: garamond,sans-serif;
+        }
+        .slideshow-container p{
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+            margin-top: 20px;
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 24px;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: 550px;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: relative;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 0 0 10px 10px;
+        }
+
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fade in animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: 0.4} 
+            to {opacity: 1}
+        }
+
+
+        /* Employee Log In Link */
+        .login-link {
+            margin-left: auto;
+            padding-left: 20px;
+            text-decoration: none;
+            color: maroon;
+        }
+
+        .capability-statement{
+            background-color: rgb(183, 183, 183);
+            color: rgba(156, 156, 156, 0.551);
+            padding: 110px;
+            justify-content: center;
+            text-align: center;
+            font-family: garamond, serif;
+            font: 100;
+        }
+        .capability-statement h1{
+            color:gray;
+            font-size: 25px;
+            font-family: garamond, serif;
+            font: 100;
+        }
+        .capability-statement p{
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            font-family: garamond, serif;
+            font: 100;
+
+        }
+        .our-capabilities{
+            background-color: rgb(23, 23, 56);
+            padding: 100px;
+            color: gray;
+            justify-content: center;
+            text-align: center;
+            font-family: garamond, serif;
+            font: 100;
+            font-size: 24px;
+        }
+        .our-capabilities h1{
+            color: white;
+        }
+        .our-capabilities p{
+            color: white;
+        }
+        .cards{
+            background-color: white;
+            color: black;
+            font-family: garamond, serif;
+            font: 100;
+            padding: 310px;
+            justify-content: center;
+            text-align: center;
+        }
+        .clients{
+            background-color: rgb(23, 23, 56);
+            padding: 110px;
+            color: white;
+            justify-content: center;
+            text-align: center;
+            font: 100;
+
+
+        }
+        .solutions{
+            background-color: white;
+            padding: 110px;
+            color: black;
+            justify-content: center;
+            text-align: center;
+
+        }
+        .stay-on-the-know{
+            background-color: gray;
+            padding: 110px;
+            color: black;
+            justify-content: center;
+            text-align: center;
+
+        }
+        .stay-on-the-know h1{
+            color: rgb(38, 38, 82);
+            font-size: 25px;
+            font-family: garamond, serif;
+            font: 100;
+            
+        }
+        .stay-on-the-know p{
+            color: black;
+            font-size: 20px;
+            
+        }
+
+        .contact-us{
+            background-color: whitesmoke;
+            padding: 110px;
+            color: black;
+            justify-content: center;
+            text-align: center;
+            font-family: garamond, serif;
+            font: 100;
+        }
+        .contact-us h1{
+            font-size: 25px;
+            color: rgb(8, 8, 29);
+        }
+        .contact-us p{
+            font-size:20px ;
+            color: rgb(0, 0, 0);
+        }
+        .contact-us button{
+            background-color: red; /* Green background */
+            border: none; /* Remove borders */
+            color: white; /* White text */
+            padding: 12px 24px; /* Add some padding */
+            text-align: center; /* Center the text */
+            text-decoration: none; /* Remove underline from the link */
+            display: inline-block; /* Make the button inline */
+            font-size: 16px; /* Increase font size */
+            border-radius: 1px; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Smooth transition for hover */
+            cursor: pointer; 
+
+        }
+        .contact-us button:hover {
+            background-color: white;
+            color: red; /* Change text color on hover */
+        }
+        .contact-us button a{   
+            color:rgb(108, 47, 47);
+        }
+        .more-info{
+            background-color: rgb(23, 23, 56);
+            padding: 110px;
+            color: white;
+            justify-content: center;
+            text-align: center;
+        }
+        .image-container{
+            background-color: rgb(23, 23, 56);
+            padding: 50px;
+            color:black;
+            text-align: center;
+           
+            background-image: url('imapact data group/images/impact (9).jpg');
+    }
+    .image-container h1{
+            font-size: 30px;
+            margin-bottom: 10px;
+            font: 100;
+            color: rgb(0, 0, 0);
+            font: 100;
+            font-family: garamond, serif;
+
+    }
+    .image-container p{
+            color: rgb(0, 0, 0);
+            font-size: 24px;
+            font-family: garamond, serif;
+    }
+
+    .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px;
+            padding: 20px;
+            color: white;
+            background-color: transparent;
+            margin: 0 auto;
+            max-width: 1200px; /* Limit the width of the grid for better presentation */
+    }
+
+    .grid-container > div {
+        background-color: rgba(98, 98, 98, 0.8);
+        font-size: 5px;
+        border-radius: 3px; /* Rounded corners for a softer look */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        transition: transform 0.3s ease;
+        padding: 100px;
+        padding-left: auto;
+        padding-top: 20px;
+        font-family: garamond, serif;
+        font: 100;
+    }
+
+    .grid-container > div:hover {
+        transform: translateY(-5px); /* Slight lift effect on hover */
+    }
+
+    .grid-container h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        font: 100;
+        font-family: garamond, serif;
+       
+    }
+
+    .grid-container h5 {
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0;
+        font-weight: bold;
+        font-family: garamond, serif;
+        font: 100;
+    }
+    * {
+  box-sizing: border-box;
+}
+
+
+
+.capability-statement{
+            background-color: rgb(183, 183, 183);
+            color: rgba(156, 156, 156, 0.551);
+            padding: 110px;
+            justify-content: center;
+            text-align: center;
+            font-family: garamond, serif;
+            font: 100;
+        }
+        .capability-statement h1{
+            color: rgb(8, 18, 71);
+            font-size: 25px;
+            font-family: garamond, serif;
+            font: 100;
+        }
+        .capability-statement p{
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            font-family: garamond, serif;
+            font: 100;
+
+        }
+
+.solutions .grid-container{
+    color: #010102;
+}
+footer {
+            background-color: #485F6D;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        footer nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        footer nav ul li {
+            margin: 0 10px;
+        }
+
+        footer nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        footer nav ul li a:hover {
+            color: #ddd;
+        }
+
+        .social-media {
+            margin-top: 10px;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+
+        .social-media img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .social-media img:hover {
+            transform: scale(1.1);
+        }
+        .grid-container h5 p a{
+            color: rgba(190, 0, 0, 0.551);
+            font-size: 14px;
+            font-family: garamond, serif;
+            font: 100;
+        }
+        .footer .social-media  .p .a{
+            color: white;
+            text-decoration: none;
+        }
+        .welcome .h1 .p{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>  
+
+        <span class="idg-icon"><a href="index.html">SDI</a></span>
+        <nav>
+            <ul>
+                <li><a href="industries.html">Industries</a>
+                    <ul>
+                        <li><a href="healthcare.html">Health Care</a></li>
+                        <li><a href="finance.html">Finance</a></li>
+                        <li><a href="energy.html">Energy</a></li>
+                        <li><a href="government.html">Government</a></li>
+                    </ul>
+                </li>
+                <li><a href="capabilities.html">Capabilities</a>
+                    <ul>
+                        <li><a href="cloud.html">Cloud Services</a></li>
+                        <li><a href="ai.html">AI and Machine Learning</a></li>
+                        <li><a href="analytics.html">Big Data and BI analytics</a></li>
+                        <li><a href="enterprise.html">Enterprise Resource Planning</a></li>
+                        <li><a href="it.html">IT Project Management</a></li>
+                     
+                    </ul>
+                </li>
+                <li><a href="insights.html">Insights</a>
+                    <ul>
+                     
+                        <li><a href="case.html">Case Study</a></li>
+                        <li><a href="news.html">News</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a>
+                    
+                </li>
+             
+                <li><a href="contact.html">Contact</a></li>
+          
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Gallery Section -->
+    <section class="slideshow-container">
+      
+
+            <!-- Container for the image gallery -->
+<div class="container">
+
+    <!-- Full-width images with number text -->
+    <div>
+        <div class="welcome">
+            <h1>WELCOME TO SPARK DATA IMPACT</h1>
+            <p>Welcome to Spark Data Impact (SDI), where data meets innovation. At IDG, we believe in the transformative power <br>
+                of data and its ability to drive meaningful change. Our mission is to empower businesses and organizations by <br>
+                providing cutting-edge big data analytics solutions, tailored to unlock insights that propel growth and success.<br>
+
+
+                With a team of experienced data scientists, engineers, and IT project managers, we specialize in harnessing the <br>
+                potential of vast datasets, turning complex information into actionable strategies. Whether you're looking to optimize<br>
+                 your operations, understand your customers better, or stay ahead in a competitive market, SDI is your partner in <br>
+                 navigating the data-driven landscape.
+                
+                Thank you for choosing Spark Data Impact. Together, let's turn data into impact.</p>
+
+       
+        
+  
+    <!-- Image text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+  
+    <!-- Thumbnail images -->
+ 
+  </div>
+    </section>
+
+    <main class="image-container">
+  
+        <div class="welcome">
+            <h1>Who Are We</h1>
+            <h5><p>
+                Spark Data Impact (SDI) is a company specializing in big data analytics and IT solutions.<br>
+                 IDG focuses on helping businesses and organizations leverage data to drive growth,<br>
+                  innovation, and informed decision-making. By offering a range of services, including <br>
+                  data analytics, enterprise resource planning (ERP), and cloud-based solutions, IDG enables<br>
+                   its clients to extract valuable insights from large datasets, optimize their operations, and<br>
+                    stay competitive in their respective industries.</p></h5>
+        </div>
+    </main>
+
+    <section class="capability-statement">
+        <h1>Capability statement</h1>
+        <h5><p>
+            
+            Spark Data Impact (SDI) is a leading provider of big data analytics and IT solutions,<br>
+             dedicated to transforming data into actionable insights that drive business success.<br>
+              With a strong focus on innovation, our team of experienced professionals empowers<br>
+               organizations to harness the power of data, streamline operations, and achieve<br>
+                strategic objectives.
+             Click <a href="https://www.jrssinc.com/_files/ugd/66147c_735313d53f5d4c328f4d1228a183d504.pdf">here</a> to get your copy now.</p></h5>
+          
+
+    </section>
+    <section class="our-capabilities">
+        <h1>Our Capabilities</h1>
+        <h5><p>Transform your business with our diverse range of IT capabilities.<br>
+
+            
+        From digital transformation to cloud migration, we've been<br> architecting solutions for federal and commercial clients.</p></h5>
+        </section>
+        <section>
+        <div class="grid-container">
+            <div><h1>Cloud Services</h1>
+                <h5><p>
+                Unlock the power of the Cloud and transform your IT infrastructure with our data modernization solutions with the Cloud. <a href="cloud.html">Read More</a></p></h5>
+            </div>
+           
+            <div><h1>AI and Machine Learning</h1>
+                <h5><p>
+                Experience the future of technology with our AI and ML solutions that drive innovation and help discover new possibilities for your business.<a href="ai.html">Read More</a></p></h5>
+            </div>
+            <div><h1>Big Data and BI Analytics</h1>
+                <h5><p>Turn data into insights and make informed decisions with our Big Data and Business Intelligence solutions.<a href="analytics.html">Read More</a></p></h5>
+            </div>
+            <div><h1>Enterprise Resource Planning</h1>
+                <h5><p>
+                   
+                    Streamline your business operations and achieve greater efficiency with our Enterprise Resource Planning (ERP) solutions.<a href="enterprise.html">Read More</a></p></h5>
+            </div>
+            <div><h1>IT Project Management</h1>
+                <h5><p>
+              
+                    From planning to execution, we help you achieve your IT project goals with our expert project management solutions.<a href="it.html">Read More</a></p></h5>
+            </div>
+      
+           
+        </div>
+    </section>
+ 
+
+    <section class="contact-us">
+        <h1>Get to Know Us</h1>
+        <h5><p>Get to know us and discover how our expertise can help<br>take your business or agency to the next level.</p></h5>
+        <button><a href="contact.html">Contact</a></button>
+
+    </section>
+    <footer>
+        <div class="social-media">
+          
+            <a href="#"><img src="imapact data group/images/Twitter.jpeg" alt="Twitter"></a>
+            <a href="#"><img src="imapact data group/images/Instagram.jpeg" alt="Instagram"></a>
+            <a href="#"><img src="imapact data group/images/linkedIn.jpeg" alt="LinkedIn"></a>
+        </div>
+        <p>&copy; 2021 SDG. All rights reserved.</p>
+      
+        <p>Email: info@sdg.com | Phone: 123-456-7890</p>
+        <p>Address: 123 Main St, City, State, Zip</p>
+        <p>Designed by SDG</p>
+        <p>Website by SDG</p>
+      
+    </footer>
+</body>
+</html>
